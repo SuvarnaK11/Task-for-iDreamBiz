@@ -1,0 +1,57 @@
+<h2>Angular Coding Task (iDreamBiz)</h2>
+
+<button type="button" (click)="sortbyname()">Sort by Name</button> &nbsp;
+<button type="button" (click)="sortbydate()">Sort by Joining Date</button>
+<br>
+<br>
+<p><b>Search by Name :</b> <input type="text" name="nm" #nm="ngModel" ngModel><button type="button" (click)="onSearch(nm)">Search</button></p>
+<br>
+
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Joining Date</th>
+    </tr>
+    <tr *ngFor="let x of employee_data">
+        <td>{{x.id}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.department}}</td>
+        <td>{{x.joining_date  }}</td>
+    </tr>
+</table>
+
+<table *ngIf="flagSearch">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Joining Date</th>
+    </tr>
+    <tr *ngFor="let x of searchData">
+        <td>{{x.id}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.department}}</td>
+        <td>{{x.joining_date  }}</td>
+    </tr>
+</table>
+
+<p><b>Candidates having more than 1.5 years of experience :</b> <button type="button" (click)="filterforexp()">Get</button></p>
+<p>Employees in each department : <button type="button" (click)="deptemp()">GET DATA</button></p>
+
+
+<table *ngIf="deptflag">
+    <tr>
+        <th>Department</th>
+        <th>No of Employees</th>
+    </tr>
+    <tr *ngFor="let x of newdept">
+        
+        <td>{{x.dept}}</td>
+        <td>{{x.count}}</td>
+    </tr>
+</table>
+
+<p><b>Delete Development department :</b> <button type="button" (click)="deleteDept()">Delete</button></p>

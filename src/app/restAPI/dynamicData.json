@@ -1,0 +1,12 @@
+{  
+  "headerData": {
+      "data":"Hello this is dyanamic data" ,
+      "myData":"Hello is this is headerData"
+   },
+   "mainData":{
+      "content":"Main data goes Here for insurance"
+   },
+   "footerData":{
+      "foot":"This is foot content"
+   }
+}
